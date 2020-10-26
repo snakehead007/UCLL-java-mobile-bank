@@ -25,7 +25,6 @@ public class IdentityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_identity, container, false);
-
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -34,11 +33,10 @@ public class IdentityFragment extends Fragment {
         view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(IdentityFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                NavHostFragment.findNavController(IdentityFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment);
 
-                //FloatingActionButton fab = getActivity().findViewById(R.id.fab);
-                //fab.setVisibility(View.VISIBLE);
+                FloatingActionButton fab = getActivity().findViewById(R.id.fab);
+                fab.setVisibility(View.VISIBLE);
             }
         });
 
