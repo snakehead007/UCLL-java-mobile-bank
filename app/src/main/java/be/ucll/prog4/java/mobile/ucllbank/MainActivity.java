@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        //fab.setVisibility(View.INVISIBLE);
+        fab.setVisibility(View.INVISIBLE);
     }
 
     @Override
