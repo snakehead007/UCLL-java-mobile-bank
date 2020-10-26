@@ -16,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.provider.MediaStore;
@@ -55,7 +56,11 @@ public class MainActivity extends AppCompatActivity {
                         PackageManager.PERMISSION_GRANTED) {
                     dispatchTakePictureIntent();
                 } else {
-                    Snackbar.make(view, "Permissions missing", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    //Snackbar.make(view, "Permissions missing", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                    ActivityCompat.requestPermissions(MainActivity.this,
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
+                                    Manifest.permission.CAMERA},
+                            1);
                 }
             }
         });
