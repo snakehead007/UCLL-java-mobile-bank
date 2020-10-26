@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //SharedPreferences prefs = this.getSharedPreferences("UCLL-Bank-Prefs", Context.MODE_PRIVATE);
-        //prefs.getString("language","en");
+        SharedPreferences prefs = this.getSharedPreferences("UCLL-Bank-Prefs", Context.MODE_PRIVATE);
+        prefs.getString("my_language","en");
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 //        .setAction("Action", null).show();
-                if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) ==  PackageManager.PERMISSION_GRANTED) {
+                if (ContextCompat.checkSelfPermission(getApplicationContext(),
+                        Manifest.permission.CAMERA) ==
+                        PackageManager.PERMISSION_GRANTED) {
                     dispatchTakePictureIntent();
                 } else {
                     Snackbar.make(view, "Permissions missing", Snackbar.LENGTH_LONG).setAction("Action", null).show();

@@ -4,7 +4,7 @@
             app:defaultValue="en"
             app:entries="@array/language_entries"
             app:entryValues="@array/language_values"
-            app:key="language"
+            app:key="my_language"
             app:title="@string/language_title"
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
