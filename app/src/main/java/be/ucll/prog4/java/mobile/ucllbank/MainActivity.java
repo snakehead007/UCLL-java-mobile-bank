@@ -52,14 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 //        .setAction("Action", null).show();
                 if (ContextCompat.checkSelfPermission(getApplicationContext(),
-                        Manifest.permission.CAMERA) ==
-                        PackageManager.PERMISSION_GRANTED) {
+                        Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     dispatchTakePictureIntent();
                 } else {
                     //Snackbar.make(view, "Permissions missing", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                     ActivityCompat.requestPermissions(MainActivity.this,
-                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
-                                    Manifest.permission.CAMERA},
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA},
                             1);
                 }
             }
